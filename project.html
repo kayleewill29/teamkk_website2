@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects and Applied Research by Kaylee Williams - Machine learning, systems engineering, and interactive web tools.">
+  <title>Projects | Kaylee Williams</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header>
+    <div class="container nav-content">
+      <a href="index.html" class="brand-logo" id="nav-brand" aria-label="Kaylee Williams Home">
+        <div class="brand-icon">KW</div>
+        <span>Kaylee Williams</span>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html" id="link-home">Home</a></li>
+          <li><a href="index.html#about" id="link-about">About</a></li>
+          <li><a href="project.html" class="active" id="link-projects">Projects</a></li>
+          <li><a href="resume.html" id="link-resume">Resume</a></li>
+          <li><a href="index.html#contact" class="nav-cta" id="link-contact-cta">Get in Touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container page-header-content">
+        <div>
+          <span class="section-tag">Applied Work &amp; Research</span>
+          <h1 class="section-title">Projects &amp; Systems</h1>
+          <p class="section-desc">
+            A comprehensive showcase of experimental research, distributed tools, and digital applications built for performance, reliability, and clarity.
+          </p>
+        </div>
+        <div>
+          <a href="resume.html" class="btn-secondary btn-sm" id="btn-view-cv">
+            <span>View Full Resume</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI & Machine Learning Section -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Category 01</span>
+          <h2 class="section-title">Artificial Intelligence &amp; Machine Learning</h2>
+          <p class="section-desc">
+            Algorithmic exploration, representation learning, and interpretability toolkits for neural networks.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Project Card 1 -->
+          <article class="card project-card">
+            <div>
+              <div class="project-header">
+                <span class="project-badge">Interpretability &amp; Vision</span>
+                <span class="project-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                </span>
+              </div>
+              <h3 class="project-title">Neural Insights Lab</h3>
+              <p class="project-summary">
+                An interactive toolkit engineered to visualize self-attention weights and probe activation trajectories across transformer layers, helping researchers diagnose representation drift.
+              </p>
+              <ul class="project-highlights">
+                <li>Visualizes multi-head attention entropy across 12+ layers in near real-time.</li>
+                <li>Reduces GPU memory overhead during probing using 8-bit dynamic quantization.</li>
+                <li>Exports interactive projection manifolds for academic publication figures.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-tags">
+                <span class="tag">PyTorch</span>
+                <span class="tag">Transformers</span>
+                <span class="tag">Python</span>
+                <span class="tag">NumPy</span>
+                <span class="tag">Matplotlib</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Source Code</span>
+                </a>
+                <a href="#" class="project-link-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  <span>Paper Spec</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="card project-card">
+            <div>
+              <div class="project-header">
+                <span class="project-badge">Representation Learning</span>
+                <span class="project-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                </span>
+              </div>
+              <h3 class="project-title">BioMetric Latent Spaces</h3>
+              <p class="project-summary">
+                Variational autoencoder framework designed to decompose continuous biometric signal streams into disentangled generative factors for anomaly classification.
+              </p>
+              <ul class="project-highlights">
+                <li>Implements customized loss formulations balancing reconstruction and divergence.</li>
+                <li>Achieved 94.2% ROC-AUC on out-of-distribution anomaly detection benchmarks.</li>
+                <li>Includes synthetic dataset generators for controlled perturbation testing.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-tags">
+                <span class="tag">PyTorch</span>
+                <span class="tag">SciPy</span>
+                <span class="tag">Autoencoders</span>
+                <span class="tag">Signal Processing</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Systems & Tools Section -->
+    <section style="background: rgba(14, 20, 36, 0.4);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Category 02</span>
+          <h2 class="section-title">Systems &amp; Data Engines</h2>
+          <p class="section-desc">
+            High-throughput event pipelines, concurrency patterns, and developer-centric utilities.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Project Card 3 -->
+          <article class="card project-card">
+            <div>
+              <div class="project-header">
+                <span class="project-badge">Streaming Architecture</span>
+                <span class="project-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </span>
+              </div>
+              <h3 class="project-title">Streamline Engine</h3>
+              <p class="project-summary">
+                An asynchronous event streaming engine built to ingest heterogeneous telemetry streams with backpressure management, low latency, and zero memory leaks.
+              </p>
+              <ul class="project-highlights">
+                <li>Processes over 15,000 events per second with sub-millisecond dispatch times.</li>
+                <li>Features a modular plug-in interface for custom message transformations.</li>
+                <li>Automated heartbeat failover and persistent ring-buffer queueing.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-tags">
+                <span class="tag">Python AsyncIO</span>
+                <span class="tag">Concurrency</span>
+                <span class="tag">WebSockets</span>
+                <span class="tag">Docker</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 4 -->
+          <article class="card project-card">
+            <div>
+              <div class="project-header">
+                <span class="project-badge">Developer Infrastructure</span>
+                <span class="project-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </span>
+              </div>
+              <h3 class="project-title">LabBench Runner</h3>
+              <p class="project-summary">
+                A lightweight CLI orchestrator that provisions isolated experiment environments, logs hyperparameter sweeps, and syncs artifact checkpoints automatically.
+              </p>
+              <ul class="project-highlights">
+                <li>Automates multi-seed trial generation and statistical significance metrics.</li>
+                <li>Generates reproducible containerized recipes for Linux clusters.</li>
+                <li>Integrates zero-dependency Markdown test reports.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-tags">
+                <span class="tag">Bash</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Python CLI</span>
+                <span class="tag">Git Hooks</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web & HCI Section -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Category 03</span>
+          <h2 class="section-title">Web &amp; Human-Computer Interaction</h2>
+          <p class="section-desc">
+            Clean interfaces, accessible research tools, and high-performance digital workspaces.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Project Card 5 -->
+          <article class="card project-card">
+            <div>
+              <div class="project-header">
+                <span class="project-badge">User Experience</span>
+                <span class="project-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                </span>
+              </div>
+              <h3 class="project-title">Adaptive Workspace</h3>
+              <p class="project-summary">
+                A minimalist, distraction-free environment crafted for academic writers and engineers. Features instant rendering, BibTeX citation linking, and dark mode design.
+              </p>
+              <ul class="project-highlights">
+                <li>Built with modern semantic HTML and responsive CSS architecture.</li>
+                <li>Zero bloat with instantaneous page load times and strict accessibility standards.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Responsive Design</span>
+                <span class="tag">Typography</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 6 -->
+          <article class="card project-card">
+            <div>
+              <div class="project-header">
+                <span class="project-badge">Information Architecture</span>
+                <span class="project-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                </span>
+              </div>
+              <h3 class="project-title">OpenData Graph Explorer</h3>
+              <p class="project-summary">
+                A structured visualization interface for exploring interconnected scientific dataset schemas, relational entities, and lineage diagrams.
+              </p>
+              <ul class="project-highlights">
+                <li>Streamlines relationship discovery across nested relational databases.</li>
+                <li>Generates exportable SVG graph representations.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-tags">
+                <span class="tag">Data Modeling</span>
+                <span class="tag">SVG</span>
+                <span class="tag">CSS Grid</span>
+                <span class="tag">SQL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Action Card -->
+    <section>
+      <div class="container">
+        <div class="contact-card">
+          <h2>Have an Idea or Collaboration in Mind?</h2>
+          <p>
+            Whether you want to delve deeper into research methodologies, review technical specifications, or discuss code architecture, I'd love to chat.
+          </p>
+          <div class="contact-methods">
+            <a href="index.html#contact" class="btn-primary" id="btn-collab-contact">Get in Touch</a>
+            <a href="resume.html" class="btn-secondary" id="btn-collab-resume">View Experience &amp; Skills</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-text">
+        &copy; 2026 Kaylee Williams. Built with semantic HTML &amp; modern CSS.
+      </div>
+      <a href="#" class="back-to-top" id="link-back-to-top">
+        <span>Back to top</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
