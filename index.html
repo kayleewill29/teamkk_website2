@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kaylee Williams - Personal portfolio, projects, experience, and research interests.">
+  <title>Kaylee Williams | Personal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Design Tokens & CSS Reset */
+    :root {
+      --bg-primary: #080c14;
+      --bg-secondary: #0e1424;
+      --bg-card: rgba(18, 26, 43, 0.65);
+      --bg-card-hover: rgba(25, 36, 60, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(99, 102, 241, 0.4);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-indigo: #6366f1;
+      --accent-cyan: #38bdf8;
+      --accent-purple: #a855f7;
+      --accent-emerald: #10b981;
+      --gradient-brand: linear-gradient(135deg, #6366f1 0%, #38bdf8 50%, #a855f7 100%);
+      --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+      --shadow-subtle: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 35px rgba(99, 102, 241, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Ambient Background Atmosphere */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -15%;
+      left: 20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+      filter: blur(80px);
+      z-index: -1;
+      pointer-events: none;
+      animation: floatAura 18s ease-in-out infinite alternate;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -10%;
+      right: 15%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+      filter: blur(80px);
+      z-index: -1;
+      pointer-events: none;
+      animation: floatAura 22s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes floatAura {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(40px, 30px) scale(1.1); }
+      100% { transform: translate(-30px, -20px) scale(0.95); }
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text-primary);
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .text-gradient {
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    /* Layout Container */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 12, 20, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: var(--gradient-brand);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 1.75rem;
+    }
+
+    nav a {
+      font-size: 0.925rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--gradient-brand);
+      transition: width 0.25s ease;
+      border-radius: var(--radius-full);
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-full);
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      color: #c7d2fe;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-indigo);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 18px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 0 5rem;
+      position: relative;
+    }
+
+    .hero-wrapper {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 3.5rem;
+    }
+
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: var(--radius-full);
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: #6ee7b7;
+      margin-bottom: 1.5rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-emerald);
+      box-shadow: 0 0 10px var(--accent-emerald);
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-size: 3.25rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-lead {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gradient-brand);
+      color: #ffffff;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 24px -4px rgba(99, 102, 241, 0.45);
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -4px rgba(99, 102, 241, 0.65);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-subtle);
+      transition: all 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Avatar Graphic */
+    .hero-visual {
+      position: relative;
+    }
+
+    .avatar-frame {
+      width: 240px;
+      height: 240px;
+      border-radius: 36px;
+      padding: 4px;
+      background: var(--gradient-brand);
+      box-shadow: var(--shadow-glow);
+      position: relative;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      background: var(--bg-secondary);
+      border-radius: 32px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .avatar-symbol {
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    .avatar-svg {
+      width: 72px;
+      height: 72px;
+      stroke: var(--accent-cyan);
+    }
+
+    .avatar-title {
+      margin-top: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .avatar-subtitle {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    /* Stats Banner */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      padding: 1.75rem 2rem;
+      background: var(--gradient-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.25rem;
+      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 0.25rem;
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+      max-width: 600px;
+    }
+
+    /* Cards & Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gradient-brand);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    /* About Cards */
+    .about-bio {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-feature {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .about-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      display: grid;
+      place-items: center;
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+    }
+
+    .about-feature-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .about-feature-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* Project Cards */
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .project-badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    .project-icon {
+      color: var(--text-muted);
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .card:hover .project-icon {
+      color: var(--accent-cyan);
+      transform: translate(2px, -2px);
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .project-summary {
+      font-size: 0.925rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .tag {
+      font-size: 0.775rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: #cbd5e1;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    /* Skills Grid */
+    .skill-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+    }
+
+    .skill-cat-title {
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+    }
+
+    .skill-cat-title svg {
+      color: var(--accent-indigo);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-pill {
+      font-size: 0.85rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-sm);
+      color: #e2e8f0;
+      transition: all 0.2s ease;
+    }
+
+    .skill-pill:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: rgba(99, 102, 241, 0.4);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Timeline Section */
+    .timeline {
+      position: relative;
+      margin-left: 1rem;
+      padding-left: 2rem;
+      border-left: 2px dashed rgba(255, 255, 255, 0.15);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.75rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: -2.6rem;
+      top: 0.25rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      border: 3px solid var(--accent-indigo);
+      box-shadow: 0 0 12px var(--accent-indigo);
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-role {
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .timeline-org {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.925rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: linear-gradient(145deg, rgba(30, 41, 69, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .contact-card h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card p {
+      color: var(--text-secondary);
+      max-width: 550px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.65rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.925rem;
+      transition: all 0.25s ease;
+    }
+
+    .contact-link:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2.5rem 0;
+      margin-top: 4rem;
+      background: rgba(8, 12, 20, 0.9);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-text {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .back-to-top {
+      font-size: 0.875rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .back-to-top:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 860px) {
+      .hero-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+      }
+      .hero-lead {
+        margin: 0 auto 2rem;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .stats-strip {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header>
+    <div class="container nav-content">
+      <a href="#" class="brand-logo" id="nav-brand" aria-label="Kaylee Williams Home">
+        <div class="brand-icon">KW</div>
+        <span>Kaylee Williams</span>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#about" id="link-about">About</a></li>
+          <li><a href="#projects" id="link-projects">Projects</a></li>
+          <li><a href="#skills" id="link-skills">Skills</a></li>
+          <li><a href="#experience" id="link-experience">Experience</a></li>
+          <li><a href="#contact" class="nav-cta" id="link-contact-cta">Get in Touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-wrapper">
+          <div class="hero-text">
+            <div class="badge-status">
+              <span class="status-dot"></span>
+              <span>Available for Research & Collaborations</span>
+            </div>
+            <h1>Crafting Next-Gen <br><span class="text-gradient">Intelligent Systems</span> & Software</h1>
+            <p class="hero-lead">
+              Hi, I'm Kaylee. I explore the intersection of artificial intelligence, computational research, and intuitive software architecture. Building impactful, human-centered technology.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary" id="hero-btn-work">
+                <span>View Selected Work</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="#contact" class="btn-secondary" id="hero-btn-contact">Contact Me</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="avatar-frame">
+              <div class="avatar-inner">
+                <div class="avatar-symbol">
+                  <svg class="avatar-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 3a9 9 0 0 1 9 9"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 15a3 3 0 0 1-3-3"></path>
+                  </svg>
+                </div>
+                <div class="avatar-title">Kaylee Williams</div>
+                <div class="avatar-subtitle">Technologist &amp; Researcher</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Stats / Overview -->
+        <div class="stats-strip">
+          <div class="stat-item">
+            <div class="stat-number">4+</div>
+            <div class="stat-label">Years of Project &amp; Lab Research</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Applied Software Solutions &amp; Tools</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Dedication to High Quality &amp; Clean Code</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Driven by Curiosity &amp; Precision</h2>
+          <p class="section-desc">A snapshot of my background, philosophy, and technical passions.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="margin-bottom: 1rem; font-size: 1.35rem;">Background &amp; Focus</h3>
+            <p class="about-bio">
+              I am passionate about solving complex computational challenges through clean code and modern machine learning techniques. My work spans data-driven systems, automated workflows, and building reliable digital experiences.
+            </p>
+            <p class="about-bio" style="margin-bottom: 0;">
+              Whether experimenting with neural architectures, designing performant backend interfaces, or analyzing data pipelines, I strive for clarity, reproducibility, and thoughtful engineering.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-bottom: 1rem; font-size: 1.35rem;">Core Principles</h3>
+            
+            <div class="about-feature">
+              <div class="about-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              </div>
+              <div>
+                <div class="about-feature-title">Fast Iteration, High Rigor</div>
+                <div class="about-feature-desc">Prototyping rapidly while maintaining strict standards for accuracy and test coverage.</div>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <div class="about-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              </div>
+              <div>
+                <div class="about-feature-title">Modular &amp; Scalable Architecture</div>
+                <div class="about-feature-desc">Structuring applications and codebases for longevity, clarity, and seamless team collaboration.</div>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <div class="about-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <div>
+                <div class="about-feature-title">Human-Centered Design</div>
+                <div class="about-feature-desc">Ensuring technological breakthroughs are accessible, intuitive, and genuinely helpful.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-title">Selected Projects</h2>
+          <p class="section-desc">A collection of exploratory systems, software projects, and research tools.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Project 1 -->
+          <div class="card project-card">
+            <div>
+              <div class="project-header">
+                <span class="project-badge">AI &amp; Analytics</span>
+                <span class="project-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </span>
+              </div>
+              <h3 class="project-title">Neural Insights Lab</h3>
+              <p class="project-summary">
+                A toolkit for visualizing transformer attention mechanisms and inspecting activation patterns across high-dimensional latent spaces.
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tag">Python</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">Data Viz</span>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="card project-card">
+            <div>
+              <div class="project-header">
+                <span class="project-badge">System Tool</span>
+                <span class="project-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </span>
+              </div>
+              <h3 class="project-title">Streamline Engine</h3>
+              <p class="project-summary">
+                Asynchronous event processing pipeline engineered to ingest real-time sensory data with low latency and automated error recovery.
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tag">Async I/O</span>
+              <span class="tag">APIs</span>
+              <span class="tag">Architecture</span>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="card project-card">
+            <div>
+              <div class="project-header">
+                <span class="project-badge">Web Application</span>
+                <span class="project-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </span>
+              </div>
+              <h3 class="project-title">Adaptive Workspace</h3>
+              <p class="project-summary">
+                Minimalist, high-performance web dashboard providing researchers with synchronized note-taking, markdown previews, and citation management.
+              </p>
+            </div>
+            <div class="tech-tags">
+              <span class="tag">HTML5 / CSS</span>
+              <span class="tag">UX Design</span>
+              <span class="tag">Accessibility</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Stack Section -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Competencies</span>
+          <h2 class="section-title">Technical Expertise</h2>
+          <p class="section-desc">Languages, libraries, and frameworks I leverage across projects.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="skill-category">
+            <h3 class="skill-cat-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <span>Languages</span>
+            </h3>
+            <div class="skill-list">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3 / Modern CSS</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">Bash / Shell</span>
+              <span class="skill-pill">C / C++</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-cat-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              <span>AI &amp; Data Science</span>
+            </h3>
+            <div class="skill-list">
+              <span class="skill-pill">PyTorch</span>
+              <span class="skill-pill">TensorFlow</span>
+              <span class="skill-pill">Scikit-Learn</span>
+              <span class="skill-pill">Pandas &amp; NumPy</span>
+              <span class="skill-pill">Data Visualization</span>
+              <span class="skill-pill">Model Evaluation</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="skill-cat-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span>Tools &amp; Workflows</span>
+            </h3>
+            <div class="skill-list">
+              <span class="skill-pill">Git &amp; GitHub</span>
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">Linux Environments</span>
+              <span class="skill-pill">Jupyter Lab</span>
+              <span class="skill-pill">CI/CD Pipelines</span>
+              <span class="skill-pill">System Testing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Trajectory</span>
+          <h2 class="section-title">Experience &amp; Education</h2>
+          <p class="section-desc">Key milestones in research, software development, and academia.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">2023 — Present</div>
+            <div class="timeline-role">Graduate Researcher &amp; Developer</div>
+            <div class="timeline-org">Computational Intelligence &amp; AI Research Group</div>
+            <p class="timeline-desc">
+              Conducting experimental research on scalable machine learning algorithms, developing custom evaluation benchmarks, and collaborating across multidisciplinary lab teams.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">2021 — 2023</div>
+            <div class="timeline-role">Software Engineer Intern &amp; Project Lead</div>
+            <div class="timeline-org">Technology Innovation Laboratory</div>
+            <p class="timeline-desc">
+              Designed responsive user interfaces, structured RESTful service endpoints, and automated data ingestion scripts resulting in significant workflow performance gains.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">2019 — 2023</div>
+            <div class="timeline-role">Bachelor of Science in Computer Science</div>
+            <div class="timeline-org">University Academic Honors</div>
+            <p class="timeline-desc">
+              Focused on algorithmic design, discrete mathematics, distributed systems, and computer architecture. Active member of collegiate hackathons and tech initiatives.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <h2>Let's Build Something Meaningful</h2>
+          <p>
+            I am always interested in discussing new ideas, research collaborations, or software opportunities. Feel free to connect!
+          </p>
+          <div class="contact-methods">
+            <a href="mailto:kaylee.williams@example.com" class="contact-link" id="contact-email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>Email Me</span>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-link" id="contact-github">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-link" id="contact-linkedin">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-text">
+        &copy; 2026 Kaylee Williams. Crafted with semantic HTML &amp; modern CSS.
+      </div>
+      <a href="#" class="back-to-top" id="link-back-to-top">
+        <span>Back to top</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
