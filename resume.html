@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Resume and Curriculum Vitae of Kaylee Williams - Experience, education, research, and technical proficiencies.">
+  <meta name="description" content="Resume of Kaylee Williams - B.S. in Information Systems & Analytics at LSU, IT Audit Intern at Quanta Services, Technical Support Agent at LSU ITS, and Class President of LSU Center for Internal Auditing & Cybersecurity Risk Management.">
   <title>Resume | Kaylee Williams</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,10 +22,9 @@
       <nav aria-label="Main Navigation">
         <ul>
           <li><a href="index.html" id="link-home">Home</a></li>
-          <li><a href="index.html#about" id="link-about">About</a></li>
           <li><a href="project.html" id="link-projects">Projects</a></li>
           <li><a href="resume.html" class="active" id="link-resume">Resume</a></li>
-          <li><a href="index.html#contact" class="nav-cta" id="link-contact-cta">Get in Touch</a></li>
+          <li><a href="contact.html" class="nav-cta" id="link-contact-cta">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -37,65 +36,57 @@
       <div class="container page-header-content">
         <div>
           <span class="section-tag">Curriculum Vitae</span>
-          <h1 class="section-title">Resume &amp; Experience</h1>
+          <h1 class="section-title">Resume &amp; Qualifications</h1>
           <p class="section-desc">
-            Academic credentials, research appointments, engineering achievements, and technical stack.
+            Information Systems &amp; Analytics, IT Audit, Technical Support, and Campus Leadership.
           </p>
         </div>
         <div class="hero-actions">
-          <a href="mailto:kaylee.williams@example.com" class="btn-secondary btn-sm" id="btn-email-cv">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <span>Contact Directly</span>
-          </a>
-          <a href="project.html" class="btn-primary btn-sm" id="btn-projects-link">
-            <span>Explore Projects</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <button onclick="window.print()" class="btn-secondary btn-sm" id="btn-print-resume" aria-label="Print or save resume as PDF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            <span>Print / Save PDF</span>
+          </button>
+          <a href="contact.html" class="btn-primary btn-sm" id="btn-contact-resume">
+            <span>Get in Touch</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Resume Body -->
+    <!-- Resume Paper Body -->
     <section>
       <div class="container">
-        <article class="resume-paper">
+        <article class="resume-paper" id="printable-resume">
           <!-- Resume Header Block -->
           <div class="resume-header-block">
             <div>
               <h2 class="resume-candidate-name">Kaylee Williams</h2>
-              <div class="resume-candidate-title">Computational Researcher &amp; Software Technologist</div>
+              <div class="resume-candidate-title">Information Systems &amp; Analytics &bull; IT Audit &amp; Technical Support</div>
               <p style="color: var(--text-muted); margin-top: 0.35rem; font-size: 0.95rem;">
-                Baton Rouge, Louisiana &bull; Available for Research &amp; Engineering Roles
+                Houston, TX &bull; Baton Rouge, LA &bull; Louisiana State University
               </p>
             </div>
             <ul class="resume-contact-list">
               <li>
-                <a href="mailto:kaylee.williams@example.com" id="resume-email-link">
+                <a href="mailto:kwil668@lsu.edu" id="resume-email-link">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  <span>kaylee.williams@example.com</span>
+                  <span>kwil668@lsu.edu</span>
                 </a>
               </li>
               <li>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" id="resume-github-link">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                  <span>github.com/kayleewilliams</span>
+                <a href="tel:3468019894" id="resume-phone-link">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>(346) 801-9894</span>
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" id="resume-linkedin-link">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                  <span>linkedin.com/in/kayleewilliams</span>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" id="resume-location-link">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Houston, TX / Baton Rouge, LA</span>
                 </a>
               </li>
             </ul>
-          </div>
-
-          <!-- Section: Professional Summary -->
-          <div class="resume-section">
-            <h3 class="resume-section-title">Professional Summary</h3>
-            <p style="color: var(--text-secondary); line-height: 1.8; font-size: 0.975rem;">
-              Detail-oriented Computer Scientist and Researcher with hands-on experience developing machine learning models, distributed telemetry pipelines, and accessible software applications. Demonstrated background in algorithmic experimentation, high-dimensional representation analysis, and modern full-stack methodologies. Passionate about engineering high-performance systems with measurable real-world utility.
-            </p>
           </div>
 
           <!-- Section: Education -->
@@ -105,92 +96,109 @@
             <div class="resume-entry">
               <div class="resume-entry-top">
                 <div class="resume-entry-role">Louisiana State University (LSU)</div>
-                <div class="resume-entry-meta">Baton Rouge, LA &bull; 2019 — 2023</div>
+                <div class="resume-entry-meta">Baton Rouge, LA &bull; May 2028</div>
               </div>
-              <div class="resume-entry-org">Bachelor of Science in Computer Science &bull; Minor in Mathematics</div>
+              <div class="resume-entry-org">
+                B.S. in Information Systems and Analytics &bull; Minor: Internal Audit
+              </div>
               <ul class="resume-bullets">
-                <li>Academic Honors / Dean's List Scholar across all semesters.</li>
-                <li><strong>Relevant Coursework:</strong> Machine Learning, Deep Neural Networks, Design &amp; Analysis of Algorithms, Operating Systems, Distributed Systems, Database Systems, Computer Architecture, Linear Algebra, Probability &amp; Statistics.</li>
-                <li><strong>Capstone:</strong> Architected an interactive distributed sensor data visualization platform adopted by university lab groups.</li>
+                <li><strong>GPA:</strong> 4.22</li>
+                <li><strong>Related Coursework:</strong> Design of Information Systems Solutions, Business Statistics and Analytics, Business Calculus.</li>
               </ul>
             </div>
           </div>
 
           <!-- Section: Experience -->
           <div class="resume-section">
-            <h3 class="resume-section-title">Research &amp; Engineering Experience</h3>
+            <h3 class="resume-section-title">Experience</h3>
 
-            <!-- Role 1 -->
+            <!-- Role 1: Quanta Services -->
             <div class="resume-entry">
               <div class="resume-entry-top">
-                <div class="resume-entry-role">Graduate Research Assistant &amp; Machine Learning Engineer</div>
-                <div class="resume-entry-meta">2023 — Present</div>
+                <div class="resume-entry-role">IT Audit Intern</div>
+                <div class="resume-entry-meta">Houston, TX &bull; May 2026 – August 2026</div>
               </div>
-              <div class="resume-entry-org">Computational Intelligence &amp; AI Research Group</div>
+              <div class="resume-entry-org">Quanta Services</div>
               <ul class="resume-bullets">
-                <li>Designed novel diagnostic tools for analyzing self-attention maps in transformer architectures, reducing interpretability evaluation overhead by 40%.</li>
-                <li>Authored automated data processing scripts in PyTorch and NumPy, processing terabyte-scale scientific datasets on high-performance Linux computing clusters.</li>
-                <li>Containerized experiments using Docker to guarantee 100% environment reproducibility across lab workstations and cluster nodes.</li>
-                <li>Collaborated with faculty and external researchers to write technical papers and documentation for open-source research releases.</li>
+                <li>Evaluated internal controls against SOC 2 Trust Services Criteria to support annual corporate SOC audits.</li>
+                <li>Executed SOX compliance testing across operating units to identify control gaps in key financial systems.</li>
+                <li>Tested ITGCs across Access Management, Change Management, and Operations to verify compliance.</li>
               </ul>
             </div>
 
-            <!-- Role 2 -->
+            <!-- Role 2: LSU ITS -->
             <div class="resume-entry">
               <div class="resume-entry-top">
-                <div class="resume-entry-role">Software Engineering Intern</div>
-                <div class="resume-entry-meta">2022 — 2023</div>
+                <div class="resume-entry-role">Technical Support Agent</div>
+                <div class="resume-entry-meta">Baton Rouge, LA &bull; November 2025 – Present</div>
               </div>
-              <div class="resume-entry-org">Technology Innovation Laboratory</div>
+              <div class="resume-entry-org">LSU Information Technology Services</div>
               <ul class="resume-bullets">
-                <li>Engineered an asynchronous message-handling pipeline using Python <code>asyncio</code> and WebSockets capable of processing 15,000+ continuous event packets per second.</li>
-                <li>Built clean, responsive administrative user interfaces adhering to strict accessibility standards and semantic HTML5/CSS guidelines.</li>
-                <li>Refactored legacy REST API endpoints, cutting endpoint response latency by 28% and eliminating redundant queries through structured caching.</li>
-                <li>Participated in peer code reviews, established CI/CD linting checks, and drafted comprehensive API specifications.</li>
+                <li>Deliver technical support resolving 30+ weekly incidents across diverse campus systems.</li>
+                <li>Support 300+ users monthly via phone, chat, and in-person service desk channels.</li>
+                <li>Diagnose hardware, software, and network issues while ensuring excellent customer satisfaction.</li>
               </ul>
             </div>
 
-            <!-- Role 3 -->
+            <!-- Role 3: Starbucks -->
             <div class="resume-entry">
               <div class="resume-entry-top">
-                <div class="resume-entry-role">Undergraduate Research Fellow</div>
-                <div class="resume-entry-meta">2021 — 2022</div>
+                <div class="resume-entry-role">Barista</div>
+                <div class="resume-entry-meta">Houston, TX &bull; June 2023 – August 2024</div>
               </div>
-              <div class="resume-entry-org">Advanced Data Systems Group</div>
+              <div class="resume-entry-org">Starbucks Corporation</div>
               <ul class="resume-bullets">
-                <li>Implemented multidimensional data indexing algorithms in C++ to optimize query retrieval times over large sensory matrices.</li>
-                <li>Formulated automated validation test suites with over 90% unit test branch coverage.</li>
-                <li>Presented findings and empirical benchmarks at the regional undergraduate research symposium.</li>
+                <li>Prepared 75+ custom beverage recipes with speed and accuracy to enhance store efficiency.</li>
+                <li>Operated commercial coffee equipment proficiently within a fast-paced, high-demand environment.</li>
+                <li>Built rapport with over 20 regular customers to drive loyalty and repeat business.</li>
+              </ul>
+            </div>
+
+            <!-- Role 4: Harris County Elections -->
+            <div class="resume-entry">
+              <div class="resume-entry-top">
+                <div class="resume-entry-role">Electronic Support Specialist</div>
+                <div class="resume-entry-meta">Houston, TX &bull; October 2021 &amp; February 2022</div>
+              </div>
+              <div class="resume-entry-org">Harris County Elections</div>
+              <ul class="resume-bullets">
+                <li>Configured, deployed, and supported electronic voting system at municipal voting locations.</li>
+                <li>Troubleshot election management system hardware and software issues in collaboration with officials.</li>
+                <li>Managed real-time voter 'Wait Time' data to streamline polling traffic and minimize site congestion.</li>
               </ul>
             </div>
           </div>
 
-          <!-- Section: Technical Skills Matrix -->
+          <!-- Section: Skills -->
           <div class="resume-section">
-            <h3 class="resume-section-title">Technical Competencies</h3>
+            <h3 class="resume-section-title">Skills</h3>
             
             <div class="resume-skill-matrix">
-              <div class="resume-skill-cat">Programming:</div>
-              <div class="resume-skill-vals">Python, C/C++, SQL, HTML5, CSS3, Modern JavaScript/TypeScript, Bash/Shell</div>
+              <div class="resume-skill-cat">Core Software &amp; Coding:</div>
+              <div class="resume-skill-vals">Beginner Python, Microsoft Excel (Advanced Data Modeling &amp; Analytics), Microsoft Word</div>
 
-              <div class="resume-skill-cat">AI &amp; Data Science:</div>
-              <div class="resume-skill-vals">PyTorch, TensorFlow, Scikit-Learn, Pandas, NumPy, SciPy, Matplotlib, Data Visualization</div>
+              <div class="resume-skill-cat">IT Audit &amp; Controls:</div>
+              <div class="resume-skill-vals">SOC 2 Trust Services Criteria, SOX Compliance Testing, ITGC Testing (Access Management, Change Management, Operations), Control Gap Analysis</div>
 
-              <div class="resume-skill-cat">Tools &amp; Systems:</div>
-              <div class="resume-skill-vals">Git, GitHub, Docker, Linux/Unix Environments, JupyterLab, Slurm / HPC Clusters, CI/CD</div>
+              <div class="resume-skill-cat">Technical Support:</div>
+              <div class="resume-skill-vals">Multi-Channel Service Desk (Phone, Chat, In-Person), Hardware &amp; Software Diagnostics, Campus Network Troubleshooting, Incident Resolution</div>
 
-              <div class="resume-skill-cat">Core Competencies:</div>
-              <div class="resume-skill-vals">Machine Learning Systems, Algorithm Optimization, Concurrency, Semantic Web Architecture, Technical Writing</div>
+              <div class="resume-skill-cat">Systems &amp; Operations:</div>
+              <div class="resume-skill-vals">Electronic Voting Systems Deployment &amp; Hardware Support, Real-Time Telemetry / Wait Time Data Management, Workflow Optimization</div>
             </div>
           </div>
 
-          <!-- Section: Honors & Achievements -->
+          <!-- Section: Activities & Leadership -->
           <div class="resume-section">
-            <h3 class="resume-section-title">Honors &amp; Leadership</h3>
+            <h3 class="resume-section-title">Activities &amp; Leadership</h3>
             <ul class="resume-bullets">
-              <li><strong>President's Honor Roll &amp; Dean's List</strong> — Recognized for continuous academic excellence throughout undergraduate tenure.</li>
-              <li><strong>1st Place Winner — University AI Hackathon</strong> — Built an automated accessibility assistant for document understanding within 36 hours.</li>
-              <li><strong>Active Member — ACM (Association for Computing Machinery)</strong> — Led peer workshops on Python development and Git version control fundamentals.</li>
+              <li><strong>LSU Center for Internal Auditing &amp; Cybersecurity Risk Management</strong> – Class President</li>
+              <li><strong>Association of Information Technology Professionals (AITP)</strong> – Vice President</li>
+              <li><strong>Women in Business</strong> – Member</li>
+              <li><strong>Student Philanthropy Council</strong> – Member</li>
+              <li><strong>Geaux Big LSU</strong> – Community Service Volunteer</li>
+              <li><strong>The Institute of Internal Auditors (IIA)</strong> – Member</li>
+              <li><strong>The University of Texas at Austin: Subiendo&trade; Leadership Academy</strong> – Participant</li>
             </ul>
           </div>
         </article>
@@ -201,13 +209,13 @@
     <section>
       <div class="container">
         <div class="contact-card">
-          <h2>Ready to Connect?</h2>
+          <h2>Interested in Collaborating?</h2>
           <p>
-            Whether you have open roles, research initiatives, or want to discuss technical ideas, I look forward to hearing from you.
+            Whether discussing IT audit practices, technical support opportunities, or campus leadership initiatives, I'd welcome the conversation.
           </p>
           <div class="contact-methods">
-            <a href="mailto:kaylee.williams@example.com" class="btn-primary" id="btn-bottom-email">Send an Email</a>
-            <a href="project.html" class="btn-secondary" id="btn-bottom-projects">Browse Portfolio Projects</a>
+            <a href="contact.html" class="btn-primary" id="btn-bottom-contact">Contact Kaylee</a>
+            <a href="project.html" class="btn-secondary" id="btn-bottom-projects">Explore Applied Projects</a>
           </div>
         </div>
       </div>
@@ -218,7 +226,7 @@
   <footer>
     <div class="container footer-content">
       <div class="footer-text">
-        &copy; 2026 Kaylee Williams. Built with semantic HTML &amp; modern CSS.
+        &copy; 2026 Kaylee Williams. B.S. in Information Systems &amp; Analytics, Louisiana State University.
       </div>
       <a href="#" class="back-to-top" id="link-back-to-top">
         <span>Back to top</span>
